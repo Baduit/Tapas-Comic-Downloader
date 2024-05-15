@@ -1,6 +1,8 @@
 # Tapastic-Comic-Downloader
 This is a downloader to download and update whole comics from https://tapas.io/. (Not official!)
 
+Please respect the work of the artists and use this tool to download comics that are in free access or that you have paid for and do not re-distribute them.
+
 ## Attention:
 **This script could be illegal in certain cases, please first read the terms of service on https://tapas.io/ !**
 
@@ -73,3 +75,6 @@ This is a downloader to download and update whole comics from https://tapas.io/.
  * To get the verbose output use `-v/--verbose`.
  * To specify an base output path use `-o/--output-dir \desired\path` (If not specified, files and folders will be created where the script was run.)
  * On some file systems (expecialy Windows ones) some characters are unsupportet, if you run into problems with that use the -c, --restrict-characters option
+
+## Get the connexion cookie
+I recommand using [cookies.txt firefox extension](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/).
