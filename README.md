@@ -7,37 +7,9 @@ Please respect the work of the artists and use this tool to download comics that
 **This script could be illegal in certain cases, please first read the terms of service on https://tapas.io/ !**
 
 ## Usage:
-1. Installing python3 and needed modules:
- * Can be installed on Debian and Ubuntu and other Linux distribution that use 'apt' like this:
- ```
- # git clone https://github.com/TilCreator/Tapas-Comic-Downloader && cd Tapas-Comic-Downloader
- # apt install python3 python3-dev python3-pip libxml2-dev libxslt1-dev zlib1g-dev
- # pip3 install -r requirenments.txt
- # pip3 install -r requirenments_novel.txt  # If novels are expected to be downloaded
- ```
- * On Arch/Antergos:
- ```
- # git clone https://github.com/TilCreator/Tapas-Comic-Downloader && cd Tapas-Comic-Downloader
- # pacman -S python python-pip
- # pip install -r requirenments.txt
- # pip install -r requirenments_novel.txt  # If novels are expected to be downloaded
- ```
- * On Windows:
-   * Install python from python.org
-   * Open cmd
-   * Navigate to repo location (needs to be downloaded)
-   * Install needed modules:
-      ```
-      pip install -r requirenments.txt
-      pip install -r requirenments_novel.txt  # If novels are expected to be downloaded
-      ```
-   * Execute the script
-      ```
-      python tapas-dl.py [-h/--help] [-f/--force] [-v/--verbose] URL/name [URL/name ...] [-o \output\path\]
-      ```
-      More exact usage in the next section
-   * (thx @ [ONSKJ](https://github.com/ONSKJ) for help with Windows)
- + If someone got it running on another OS, please let me know!
+1. Installation
+Run `pip install git+https://github.com/Baduit/Tapas-Comic-Downloader`
+
 2. Get input link
  * Go to the comic you want to download (any page)
  * Click on the comic name or thumbnail in the upper right corner to get the download URL or just use the name behind series in the url.
