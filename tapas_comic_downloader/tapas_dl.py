@@ -29,10 +29,7 @@ def printLine(msg='', noNewLine=False):
     spaces = terminalWidth - len(msg)
 
     if noNewLine:
-        if args.verbose:
-            print(' ' + msg + (' ' * (spaces - 1)))
-        else:
-            print(msg + (' ' * spaces), end='\r')
+        print(' ' + msg + (' ' * (spaces - 1)))
     else:
         print(msg + (' ' * spaces))
 
