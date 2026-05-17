@@ -101,10 +101,25 @@ def main():
             headerSrc = None
 
         data = []
-        page = pq(s.get(f'https://tapas.io/series/{seriesId}/episodes?page=1&sort=OLDEST&max_limit=99999999')  # It's over 9000! But I love that they forgot to limit the max_limit, because that means I don't have to bother with pagination ^^
-                .json()['data']['body'])
-        for episode in page('[data-permalink*="/episode/"]'):
-            data.append({'id': int(episode.attrib['data-permalink'][episode.attrib['data-permalink'].rfind('/') + 1:])})
+        page_num = 1
+        while True:
+            response = s.get(f'https://tapas.io/series/{seriesId}/episodes?page={page_num}&sort=OLDEST&max_limit=20')
+            if response.status_code != 200:
+                printLine('Error: Failed to load episode list page {} for {}'.format(page_num, urlName))
+                break
+
+            page = pq(response.json()['data']['body'])
+            episodes = page('[data-permalink*="/episode/"]')
+            if len(episodes) == 0:
+                break
+
+            for episode in episodes:
+                data.append({'id': int(episode.attrib['data-permalink'][episode.attrib['data-permalink'].rfind('/') + 1:])})
+
+            if len(episodes) < 20:
+                break
+
+            page_num += 1
 
         printLine('{} [{}] ({} pages):'.format(name, urlName, len(data)))
 
